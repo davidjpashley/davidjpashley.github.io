@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Mapbox Map</title>
+    <meta charset="utf-8">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        .legend { position: absolute; bottom: 30px; right: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <script>
+        // Your Mapbox access token
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2ZXBhc2hsZXkiLCJhIjoiY2xnYjFsMXBoMDl1ZjNobnplc3Myb3VyYSJ9.8qnplmJegCwRTnLFkm6OPg';
+        
+        // Initialize the map
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/davepashley/clvz4ry5x0a7z01nue8l34sc0',
+            center: [-98.5795, 39.8283], // Starting position [lng, lat]
+            zoom: 3 // Starting zoom level
+        });
+
+        // Add the legend when the map loads
+        map.on('load', function() {
+            const legend = document.createElement('div');
+            legend.className = 'legend';
+            legend.innerHTML = '<img src="ADD URL HERE" alt="Map Legend">';
+            map.getContainer().appendChild(legend);
+        });
+    </script>
+</body>
+</html>
