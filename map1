@@ -29,7 +29,7 @@
         map.on('load', function() {
             const legend = document.createElement('div');
             legend.className = 'legend';
-            legend.innerHTML = '<img src="ADD URL HERE" alt="Map Legend">';
+            legend.innerHTML = '<img src="https://i.pinimg.com/originals/ff/72/80/ff72801189f650f11672915cda0f1bdf.png" alt="Map Legend">';
             map.getContainer().appendChild(legend);
         });
     </script>
